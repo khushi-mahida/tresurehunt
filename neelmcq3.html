@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>challange no 1</title>
+    <style>
+        body {
+            background-image: url('download (2).jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .center-box {
+            background: rgba(233, 190, 190, 0.85);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            border-radius: 16px;
+            padding: 40px 32px 32px 32px;
+            text-align: center;
+            min-width: 320px;
+        }
+        .center-box h2 {
+            margin: 0 0 24px 0;
+            font-size: 2rem;
+            color: #230202;
+            text-shadow: 2px 2px 8px #d76f6f;
+        }
+        .button-row {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin-top: 24px;
+        }
+        .center-btn {
+            padding: 12px 28px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            background: #0f0001;
+            color: #f4e5e5;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(255, 71, 71, 0.15);
+            transition: background 0.2s;
+        }
+        .center-btn:hover {
+            background: #1565c0;
+        }
+        .msg-box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff7f7;
+            color: #230202;
+            padding: 32px 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+            min-width: 240px;
+            text-align: center;
+            z-index: 1000;
+            font-size: 1.2rem;
+            display: none;
+        }
+        .msg-box button {
+            margin-top: 18px;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 6px;
+            background: #d76f6f;
+            color: #fff;
+            cursor: pointer;
+        }
+        .msg-box button:hover {
+            background: #1565c0;
+        }
+    </style>
+</head>
+<body>
+     <div class="center-box">
+        <h2>Trauma’s evil twin sibling is:</h2>
+        <div class="button-row">
+            <button class="center-btn" onclick="showMsg('Galtiyon ka raja/maharani lag rahe ho!')"> Forgetting your phone charger</button>
+            <button class="center-btn" onclick="showMsg('kya bahiiiiiiii')"> Getting a surprise holiday</button>
+            <button class="center-btn" onclick="showMsg('Sirf dil se khela, dimaag ko bench pe bithaya!')">Winning the lottery</button>
+            <button class="center-btn" onclick="showMsg('Well done, Agent! Final page awaits!')">Overthinking till 3 AM </button>
+        </div>
+    </div>
+
+    <div id="msgBox" class="msg-box">
+        <span id="msgText"></span>
+        <br>
+        <button id="closeBtn" onclick="hideMsg()">Close</button>
+        <a id="nextBtn" href="final.html" style="display:none;">
+            <button>Next</button>
+        </a>
+    </div>
+
+    <script>
+        function showMsg(msg) {
+            document.getElementById('msgText').textContent = msg;
+            document.getElementById('msgBox').style.display = 'block';
+
+            if (msg === "Well done, Agent! Final page awaits!") {
+                document.getElementById("closeBtn").style.display = "none";
+                document.getElementById("nextBtn").style.display = "inline-block";
+            } else {
+                document.getElementById("closeBtn").style.display = "inline-block";
+                document.getElementById("nextBtn").style.display = "none";
+            }
+        }
+
+        function hideMsg() {
+            document.getElementById('msgBox').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

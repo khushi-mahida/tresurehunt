@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Challenge No 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             background-image: url('download 5.jpg');
@@ -12,6 +13,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 10px;
         }
         .center-box {
             background: rgba(233, 190, 190, 0.85);
@@ -19,22 +21,25 @@
             border-radius: 16px;
             padding: 40px 32px 32px 32px;
             text-align: center;
-            min-width: 320px;
+            width: 100%;
+            max-width: 400px;
         }
         .center-box h2 {
             margin: 0 0 24px 0;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #230202;
             text-shadow: 2px 2px 8px #d76f6f;
         }
         .button-row {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 18px;
+            gap: 12px;
             margin-top: 24px;
         }
         .center-btn {
-            padding: 12px 28px;
+            flex: 1 1 45%;
+            padding: 12px;
             font-size: 1rem;
             border: none;
             border-radius: 8px;
@@ -58,6 +63,7 @@
             border-radius: 12px;
             box-shadow: 0 4px 24px rgba(0,0,0,0.25);
             min-width: 240px;
+            max-width: 90%;
             text-align: center;
             z-index: 1000;
             font-size: 1.2rem;
@@ -83,7 +89,7 @@
         <div class="button-row">
             <button class="center-btn" onclick="showMsg('naaaaa reeee')">bobay bhellll</button>
             <button class="center-btn" onclick="showMsg('Sirf dil se khela, dimaag ko bench pe bithaya!')">taco beelll</button>
-            <button class="center-btn" onclick="showMsg('Alright, the other next clue!')">anything that tatse amazing </button>
+            <button class="center-btn" onclick="showMsg('Alright, the other next clue!')">anything that tatse amazing</button>
             <button class="center-btn" onclick="showMsg('Galtiyon ka raja/maharani lag rahe ho!')">pizzzaaaaa</button>
         </div>
     </div>

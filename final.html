@@ -2,10 +2,12 @@
 <html>
 <head>
     <title>Challenge No 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             background-image: url('download.jpg');
             background-size: cover;
+            background-position: center;
             background-repeat: no-repeat;
             height: 100vh;
             margin: 0;
@@ -21,6 +23,7 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.2);
             text-align: center;
             width: 300px;
+            max-width: 90%;
         }
 
         .widget img {
@@ -28,6 +31,14 @@
             height: auto;
             border-radius: 12px;
             margin-bottom: 12px;
+        }
+
+        /* Make widget scale better on smaller devices */
+        @media (max-width: 600px) {
+            .widget {
+                padding: 20px;
+                width: 90%;
+            }
         }
     </style>
 </head>

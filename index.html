@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <style>
         body {
@@ -40,6 +41,18 @@
         }
         .error {
             color: red;
+            margin-bottom: 12px;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 500px) {
+            .login-container {
+                width: 90%;
+                padding: 20px;
+            }
+            input, button {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -78,7 +91,3 @@
     </script>
 </body>
 </html>
-
-
-
-

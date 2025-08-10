@@ -1,6 +1,7 @@
 <html>
 <head>
     <title>Challenge No 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             background-image: url('download (3).jpg');
@@ -19,6 +20,7 @@
             padding: 40px 32px 32px 32px;
             text-align: center;
             min-width: 320px;
+            max-width: 90%;
         }
         .center-box h2 {
             margin: 0 0 24px 0;
@@ -28,12 +30,13 @@
         }
         .button-row {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 18px;
+            gap: 12px;
             margin-top: 24px;
         }
         .center-btn {
-            padding: 12px 28px;
+            padding: 12px 20px;
             font-size: 1rem;
             border: none;
             border-radius: 8px;
@@ -42,6 +45,8 @@
             cursor: pointer;
             box-shadow: 0 2px 8px rgba(255, 71, 71, 0.15);
             transition: background 0.2s;
+            flex: 1 1 calc(50% - 12px);
+            min-width: 140px;
         }
         .center-btn:hover {
             background: #1565c0;
@@ -57,14 +62,15 @@
             border-radius: 12px;
             box-shadow: 0 4px 24px rgba(0,0,0,0.25);
             min-width: 240px;
+            max-width: 90%;
             text-align: center;
             z-index: 1000;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             display: none;
         }
         .msg-box button {
             margin-top: 18px;
-            padding: 8px 20px;
+            padding: 10px 20px;
             border: none;
             border-radius: 6px;
             background: #d76f6f;
@@ -74,15 +80,33 @@
         .msg-box button:hover {
             background: #1565c0;
         }
+
+        /* Mobile adjustments */
+        @media (max-width: 500px) {
+            .center-box {
+                padding: 20px;
+            }
+            .center-box h2 {
+                font-size: 1.5rem;
+            }
+            .center-btn {
+                font-size: 0.95rem;
+                padding: 10px;
+                flex: 1 1 100%;
+            }
+            .msg-box {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="center-box">
         <h2>What is the location shown in Khushi’s only reel?</h2>
         <div class="button-row">
-            <button class="center-btn" onclick="showMsg('ps check her id ?')"> Marine Drive</button>
-            <button class="center-btn" onclick="showMsg('Galtiyon ka raja/maharani lag rahe ho!')"> India Gate</button>
-            <button class="center-btn" onclick="showMsg('Sirf dil se khela, dimaag ko bench pe bithaya!')"> Gateway of India</button>
+            <button class="center-btn" onclick="showMsg('ps check her id ?')">Marine Drive</button>
+            <button class="center-btn" onclick="showMsg('Galtiyon ka raja/maharani lag rahe ho!')">India Gate</button>
+            <button class="center-btn" onclick="showMsg('Sirf dil se khela, dimaag ko bench pe bithaya!')">Gateway of India</button>
             <button class="center-btn" onclick="showMsg('Well done, Agent! Final page awaits!')">Statue of Unity</button>
         </div>
     </div>
@@ -113,27 +137,8 @@
         function hideMsg() {
             document.getElementById('msgBox').style.display = 'none';
         }
+
+      
     </script>
 </body>
-<script>
-fetch(`http://localhost:5000/progress/${localStorage.getItem("username")}`, {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ progress: 1 })
-})
-.then(res => res.json())
-.then(data => {
-    if (!data.success) {
-        alert("Not logged in!");
-        window.location.href = "login.html";
-    }
-    if (data.progress < 1) { 
-        alert("You cannot access this stage yet!");
-        window.location.href = "login.html";
-    }
-});
-</script>
-
 </html>

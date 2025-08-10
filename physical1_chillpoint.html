@@ -13,7 +13,7 @@
             justify-content: center;
             align-items: center;
         }
-         .widget {
+        .widget {
             background-color: #4a2323;
             padding: 32px;
             border-radius: 16px;
@@ -21,14 +21,12 @@
             text-align: center;
             width: 300px;
         }
-
         .widget img {
             width: 100%;
             height: auto;
             border-radius: 12px;
             margin-bottom: 24px;
         }
-
         .widget input[type="password"] {
             padding: 10px;
             width: 100%;
@@ -37,7 +35,6 @@
             font-size: 1rem;
             margin-bottom: 16px;
         }
-
         .widget button {
             padding: 10px 20px;
             background-color: #1565c0;
@@ -47,7 +44,6 @@
             font-size: 1rem;
             cursor: pointer;
         }
-
         .widget button:hover {
             background-color: #0d47a1;
         }
@@ -57,7 +53,7 @@
 
     <div class="widget">
         <img src="phy1 aryan.jpeg" alt="Secure Image">
-        <input type="password" id="password" placeholder="Your deductions agent ">
+        <input type="password" id="password" placeholder="Your deductions agent">
         <br>
         <button onclick="checkPassword()">Submit</button>
     </div>
@@ -65,12 +61,10 @@
     <script>
         function checkPassword() {
             const correctPassword = "Instinct is a marvelous thing it can neither be explained nor ignored";
-
-
-            const enteredPassword = document.getElementById("password").value;
+            const enteredPassword = document.getElementById("password").value.trim();
 
             if (enteredPassword === correctPassword) {
-                window.location.href = "chillpointmcq2.html";  // Link to next page
+                window.location.href = "chillpointmcq2.html";
             } else {
                 alert("Incorrect password. Try again!");
             }
@@ -78,8 +72,4 @@
     </script>
 
 </body>
-<script>
-
-</script>
-
 </html>

@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Challenge No 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             background-image: url('art wallpaper.jpg');
@@ -20,6 +21,7 @@
             padding: 40px 32px 32px 32px;
             text-align: center;
             min-width: 320px;
+            max-width: 90%;
         }
         .center-box h2 {
             margin: 0 0 24px 0;
@@ -76,6 +78,17 @@
         .msg-box button:hover {
             background: #a5001e;
         }
+
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
+            .center-box h2 {
+                font-size: 1.4rem;
+            }
+            .center-btn {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -103,7 +116,6 @@
             document.getElementById('msgBox').style.display = 'block';
             
             if (redirectUrl) {
-                // Auto redirect after 2 seconds
                 setTimeout(function() {
                     window.location.href = redirectUrl;
                 }, 2000);

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+        body {
+            background-color: #4a0606;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #a39393;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            width: 320px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 18px;
+            border-radius: 5px;
+            border: 1px solid #631919;
+        }
+        button {
+            padding: 10px;
+            background-color: #5e3541;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <div id="error" class="error"></div>
+        <input type="text" id="username" placeholder="Agent ID" />
+        <input type="password" id="password" placeholder="Password" />
+        <button onclick="login()">Login</button>
+    </div>
+
+    <script>
+        const credentials = [
+            { username: "Neel Kamal", password: "scriptwriter", page: "neelkamal.html" },
+            { username: "ChillPoint", password: "Hukam ka ekka pair no 2", page: "ChillPoint.html" },
+            { username: "Hazeleyes", password: "gudiya", page: "hazeleyes.html" },
+            { username: "IronFlare", password: "Hukam Ka ekka pair no 1", page: "IronFlare.html" },
+            { username: "Echoheart", password: "melody", page: "Echoheart.html" }
+        ];
+
+        function login() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const errorDiv = document.getElementById('error');
+
+            const user = credentials.find(cred => cred.username === username && cred.password === password);
+
+            if (user) {
+                localStorage.setItem("username", username);
+                window.location.href = user.page;
+            } else {
+                errorDiv.textContent = "Invalid username or password.";
+            }
+        }
+    </script>
+</body>
+</html>
+
+

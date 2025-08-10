@@ -2,33 +2,35 @@
 <html>
 <head>
     <title>Challenge No 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             background-image: url('download.jpg');
             background-size: cover;
             background-repeat: no-repeat;
+            background-position: center;
             height: 100vh;
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-         .widget {
+        .widget {
             background-color: #4a2323;
             padding: 32px;
             border-radius: 16px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.2);
             text-align: center;
             width: 300px;
+            max-width: 90%;
+            box-sizing: border-box;
         }
-
         .widget img {
             width: 100%;
             height: auto;
             border-radius: 12px;
             margin-bottom: 24px;
         }
-
         .widget input[type="password"] {
             padding: 10px;
             width: 100%;
@@ -36,18 +38,18 @@
             border-radius: 8px;
             font-size: 1rem;
             margin-bottom: 16px;
+            box-sizing: border-box;
         }
-
         .widget button {
-            padding: 10px 20px;
+            padding: 10px;
             background-color: #1565c0;
             color: white;
             border: none;
             border-radius: 8px;
             font-size: 1rem;
             cursor: pointer;
+            width: 100%;
         }
-
         .widget button:hover {
             background-color: #0d47a1;
         }
@@ -58,26 +60,26 @@
     <div class="widget">
         <img src="rays.JPG" alt="Secure Image">
         <input type="password" id="password" placeholder="Your deductions agent ">
-        <br>
         <button onclick="checkPassword()">Submit</button>
     </div>
 
     <script>
+        const correctPassword = "rays";
         function checkPassword() {
-            const correctPassword = "rays";
-            const enteredPassword = document.getElementById("password").value;
-
+            const enteredPassword = document.getElementById("password").value.trim();
             if (enteredPassword === correctPassword) {
-                window.location.href = "neelmcq3.html";  // Link to next page
+                window.location.href = "neelmcq3.html";
             } else {
                 alert("Incorrect password. Try again!");
             }
         }
+        // Allow pressing Enter to submit
+        document.getElementById("password").addEventListener("keypress", function(e) {
+            if (e.key === "Enter") {
+                checkPassword();
+            }
+        });
     </script>
 
 </body>
-<script>
-
-</script>
-
 </html>

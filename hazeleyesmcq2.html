@@ -1,10 +1,13 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Challenge No 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             background-image: url('download (2).jpg');
             background-size: cover;
+            background-position: center;
             background-repeat: no-repeat;
             height: 100vh;
             margin: 0;
@@ -18,22 +21,26 @@
             border-radius: 16px;
             padding: 40px 32px 32px 32px;
             text-align: center;
-            min-width: 320px;
+            width: 90%;
+            max-width: 400px;
         }
         .center-box h2 {
             margin: 0 0 24px 0;
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: #230202;
             text-shadow: 2px 2px 8px #d76f6f;
         }
         .button-row {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 18px;
+            gap: 12px;
             margin-top: 24px;
         }
         .center-btn {
-            padding: 12px 28px;
+            flex: 1 1 calc(50% - 12px);
+            min-width: 120px;
+            padding: 12px;
             font-size: 1rem;
             border: none;
             border-radius: 8px;
@@ -61,6 +68,7 @@
             z-index: 1000;
             font-size: 1.2rem;
             display: none;
+            max-width: 90%;
         }
         .msg-box button {
             margin-top: 18px;
@@ -82,7 +90,7 @@
         <div class="button-row">
             <button class="center-btn" onclick="showMsg('Alright, the other next clue!')">coke</button>
             <button class="center-btn" onclick="showMsg('Button 2 pressed!')">chai</button>
-            <button class="center-btn" onclick="showMsg('Galtiyon ka raja/maharani lag rahe ho!')">bonbay bhel </button>
+            <button class="center-btn" onclick="showMsg('Galtiyon ka raja/maharani lag rahe ho!')">bombay bhel</button>
             <button class="center-btn" onclick="showMsg('Sirf dil se khela, dimaag ko bench pe bithaya!')">dosssaaaa</button>
         </div>
     </div>
@@ -118,8 +126,4 @@
         }
     </script>
 </body>
-<script>
-
-</script>
-
 </html>

@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>challange no 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             background-image: url('download (2).jpg');
@@ -19,6 +21,7 @@
             padding: 40px 32px 32px 32px;
             text-align: center;
             min-width: 320px;
+            max-width: 90vw;
         }
         .center-box h2 {
             margin: 0 0 24px 0;
@@ -28,6 +31,7 @@
         }
         .button-row {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 18px;
             margin-top: 24px;
@@ -57,6 +61,7 @@
             border-radius: 12px;
             box-shadow: 0 4px 24px rgba(0,0,0,0.25);
             min-width: 240px;
+            max-width: 90vw;
             text-align: center;
             z-index: 1000;
             font-size: 1.2rem;
@@ -74,14 +79,24 @@
         .msg-box button:hover {
             background: #c10000;
         }
+
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            .center-box h2 {
+                font-size: 1.5rem;
+            }
+            .center-btn {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="center-box">
-        <h2> “Kya aapke toothpaste mein namak hai?”
-</h2>
+        <h2>“Kya aapke toothpaste mein namak hai?”</h2>
         <div class="button-row">
-            <button class="center-btn" onclick="showMsg('Alright, the other next clue!')">colgate</button>
+            <button class="center-btn" onclick="showMsg('Alright, the other next clue!')">Colgate</button>
             <button class="center-btn" onclick="showMsg('kud ja u pani mei ')">Dabur</button>
             <button class="center-btn" onclick="showMsg('i had expectations reeeee')">Pepsodent</button>
             <button class="center-btn" onclick="showMsg('na reeeeeeeeeeeeee')">Close-Up</button>
@@ -118,9 +133,5 @@
             document.getElementById('msgBox').style.display = 'none';
         }
     </script>
-
-<script>
-
-</script>
-
+</body>
 </html>

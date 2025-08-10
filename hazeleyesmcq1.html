@@ -1,16 +1,20 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>challange no 1</title>
     <style>
         body {
             background-image: url('download.jpg');
             background-size: cover;
             background-repeat: no-repeat;
-            height: 100vh;
+            background-position: center;
+            min-height: 100vh;
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 10px;
         }
         .center-box {
             background: rgba(233, 190, 190, 0.85);
@@ -18,22 +22,24 @@
             border-radius: 16px;
             padding: 40px 32px 32px 32px;
             text-align: center;
-            min-width: 320px;
+            width: 100%;
+            max-width: 500px;
         }
         .center-box h2 {
             margin: 0 0 24px 0;
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: #230202;
             text-shadow: 2px 2px 8px #d76f6f;
         }
         .button-row {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 18px;
+            gap: 12px;
             margin-top: 24px;
         }
         .center-btn {
-            padding: 12px 28px;
+            padding: 12px 20px;
             font-size: 1rem;
             border: none;
             border-radius: 8px;
@@ -42,6 +48,8 @@
             cursor: pointer;
             box-shadow: 0 2px 8px rgba(255, 71, 71, 0.15);
             transition: background 0.2s;
+            flex: 1 1 40%;
+            min-width: 140px;
         }
         .center-btn:hover {
             background: #ec180d;
@@ -56,7 +64,8 @@
             padding: 32px 24px;
             border-radius: 12px;
             box-shadow: 0 4px 24px rgba(0,0,0,0.25);
-            min-width: 240px;
+            width: 90%;
+            max-width: 320px;
             text-align: center;
             z-index: 1000;
             font-size: 1.2rem;
@@ -74,17 +83,25 @@
         .msg-box button:hover {
             background: #dc1414;
         }
+        @media (max-width: 500px) {
+            .center-box h2 {
+                font-size: 1.2rem;
+            }
+            .center-btn {
+                font-size: 0.9rem;
+                padding: 10px 14px;
+            }
+        }
     </style>
 </head>
 <body>
      <div class="center-box">
         <h2>What was the most interesting and the most difficult thing for Agent Neelkamal during Antrang, especially while being sick and managing drama responsibilities?</h2>
 
-
-        <div class="">
+        <div class="button-row">
             <button class="center-btn" onclick="showMsg('Sirf dil se khela, dimaag ko bench pe bithaya!')">handeling his cough and  sourn neck</button>
-            <button class="center-btn" onclick="showMsg('kya bahiiiiiiii')"> Performing the drama flawlessly </button>
-            <button class="center-btn" onclick="showMsg('Galtiyon ka raja/maharani lag rahe ho!')"> Balancing acting and anchoring</button>
+            <button class="center-btn" onclick="showMsg('kya bahiiiiiiii')">Performing the drama flawlessly</button>
+            <button class="center-btn" onclick="showMsg('Galtiyon ka raja/maharani lag rahe ho!')">Balancing acting and anchoring</button>
             <button class="center-btn" onclick="showMsg('Well done, Agent! Final page awaits!')">Scriptwriting</button>
         </div>
     </div>
@@ -117,8 +134,4 @@
         }
     </script>
 </body>
-<script>
-
-</script>
-
 </html>

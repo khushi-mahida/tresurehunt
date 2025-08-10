@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>challange no 1</title>
+    <title>Challenge No 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             background-image: url('download (2).jpg');
@@ -12,6 +13,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 10px;
         }
         .center-box {
             background: rgba(233, 190, 190, 0.85);
@@ -19,22 +21,23 @@
             border-radius: 16px;
             padding: 40px 32px 32px 32px;
             text-align: center;
-            min-width: 320px;
+            max-width: 90%;
         }
         .center-box h2 {
             margin: 0 0 24px 0;
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: #230202;
             text-shadow: 2px 2px 8px #d76f6f;
         }
         .button-row {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 18px;
+            gap: 12px;
             margin-top: 24px;
         }
         .center-btn {
-            padding: 12px 28px;
+            padding: 12px 20px;
             font-size: 1rem;
             border: none;
             border-radius: 8px;
@@ -43,6 +46,8 @@
             cursor: pointer;
             box-shadow: 0 2px 8px rgba(255, 71, 71, 0.15);
             transition: background 0.2s;
+            flex: 1 1 calc(50% - 24px);
+            max-width: 200px;
         }
         .center-btn:hover {
             background: #1565c0;
@@ -78,13 +83,13 @@
     </style>
 </head>
 <body>
-     <div class="center-box">
+    <div class="center-box">
         <h2>Trauma’s evil twin sibling is:</h2>
         <div class="button-row">
-            <button class="center-btn" onclick="showMsg('Galtiyon ka raja/maharani lag rahe ho!')"> Forgetting your phone charger</button>
-            <button class="center-btn" onclick="showMsg('kya bahiiiiiiii')"> Getting a surprise holiday</button>
+            <button class="center-btn" onclick="showMsg('Galtiyon ka raja/maharani lag rahe ho!')">Forgetting your phone charger</button>
+            <button class="center-btn" onclick="showMsg('kya bahiiiiiiii')">Getting a surprise holiday</button>
             <button class="center-btn" onclick="showMsg('Sirf dil se khela, dimaag ko bench pe bithaya!')">Winning the lottery</button>
-            <button class="center-btn" onclick="showMsg('Well done, Agent! Final page awaits!')">Overthinking till 3 AM </button>
+            <button class="center-btn" onclick="showMsg('Well done, Agent! Final page awaits!')">Overthinking till 3 AM</button>
         </div>
     </div>
 
